@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" media="all" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen" />
+  <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-colorpalette.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="css/example.css" />
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/bootstrap-colorpalette.js" charset="utf-8"></script>
+  <title>Color Palette for Bootstrap by extremeFE</title>
+</head>
+
+<body>
+<div id="container">
+  <div class="inner">
+
+    <header>
+      <h1>Color Palette for Bootstrap</h1>
+    </header>
+
+    <section id="downloads" class="clearfix">
+      <a href="https://github.com/extremeFE/bootstrap-colorpalette" id="view-on-github" class="button"><span>View on GitHub</span></a>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>
+        Basic color palette
+      </h2>
+      <div class="btn-group">
+        <input id="selected-color1">
+        <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown">Color</a>
+        <ul class="dropdown-menu">
+          <li><div id="colorpalette1"></div></li>
+        </ul>
+      </div>
+
+      <script>
+        $('#colorpalette1').colorPalette()
+                .on('selectColor', function(e) {
+                  $('#selected-color1').val(e.color);
+                });
+      </script>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>
+        Gmail style color plette
+      </h2>
+      <div class="btn-group">
+        <a id="selected-color2" class="btn btn-mini dropdown-toggle" data-toggle="dropdown"><i>A</i></a>
+        <ul class="dropdown-menu">
+          <li style="display:inline-block;">
+            <div>&nbsp;font color</div>
+            <div id="colorpalette2"></div>
+          </li>
+          <li style="display:inline-block;">
+            <div>&nbsp;background color</div>
+            <div id="colorpalette3"></div>
+          </li>
+        </ul>
+      </div>
+
+      <script>
+        $('#colorpalette2').colorPalette()
+                .on('selectColor', function(e) {
+                  $('#selected-color2 i').css('color', e.color);
+                });
+        $('#colorpalette3').colorPalette()
+                .on('selectColor', function(e) {
+                  $('#selected-color2 i').css('background-color', e.color);
+                });
+      </script>
+    </section>
+    <hr>
+    <section>
+      <h2>
+        Custom color option
+      </h2>
+      <div>
+        <input id="selected-color3">
+        <div id="colorpalette4"></div>
+      </div>
+      <script>
+        var options = {
+          colors:[['#000000', '#424242', '#636363', '#9C9C94', '#CEC6CE', '#EFEFEF', '#EFF7F7', '#FFFFFF']]
+        }
+        $('#colorpalette4').colorPalette(options)
+                .on('selectColor', function(e) {
+                  $('#selected-color3').val(e.color);
+                });
+      </script>
+    </section>
+
+    <footer>
+
+    </footer>
+
+
+  </div>
+</div>
+</body>
+</html>

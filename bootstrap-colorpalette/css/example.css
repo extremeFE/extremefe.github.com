@@ -1,0 +1,19 @@
+input {
+    width: 80px;
+}
+
+ul.dropdown-menu {
+    min-width: 144px;
+}
+
+ul.dropdown-menu li {
+    list-style: none;
+    padding-left: 0px;
+}
+
+#selected-color2 i {
+    display: inline-block;
+    font-weight: bold;
+    width: 20px;
+    text-align: center;
+}
