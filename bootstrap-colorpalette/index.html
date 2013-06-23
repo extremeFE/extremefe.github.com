@@ -6,7 +6,7 @@
   <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" media="all" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen" />
+  <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-colorpalette.css" />
   <link rel="stylesheet" type="text/css" media="all" href="css/example.css" />
 
@@ -17,9 +17,7 @@
 </head>
 
 <body>
-<div id="container">
-  <div class="inner">
-
+<div class="container">
     <header>
       <h1>Color Palette for Bootstrap</h1>
     </header>
@@ -48,6 +46,20 @@
                   $('#selected-color1').val(e.color);
                 });
       </script>
+      
+      <pre class="prettyprint linenums">
+&lt;div class="btn-group"&gt;
+  &lt;input id="selected-color1"&gt;
+  &lt;a class="btn btn-mini dropdown-toggle" data-toggle="dropdown"&gt;Color&lt;/a&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;div id="colorpalette1"&gt;&lt;/div&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+      <pre class="prettyprint linenums">
+$('#colorpalette1').colorPalette()
+  .on('selectColor', function(e) {
+    $('#selected-color1').val(e.color);
+  });</pre>
     </section>
 
     <hr>
@@ -80,6 +92,29 @@
                   $('#selected-color2 i').css('background-color', e.color);
                 });
       </script>
+      <pre class="prettyprint linenums">
+&lt;div class="btn-group"&gt;
+  &lt;a id="selected-color2" class="btn btn-mini dropdown-toggle" data-toggle="dropdown"&gt;&lt;i&gt;A&lt;/i&gt;&lt;/a&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li style="display:inline-block;"&gt;
+      &lt;div&gt;&nbsp;font color&lt;/div&gt;
+      &lt;div id="colorpalette2"&gt;&lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li style="display:inline-block;"&gt;
+      &lt;div&gt;&nbsp;background color&lt;/div&gt;
+      &lt;div id="colorpalette3"&gt;&lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+      <pre class="prettyprint linenums">
+$('#colorpalette2').colorPalette()
+  .on('selectColor', function(e) {
+    $('#selected-color2 i').css('color', e.color);
+  });
+$('#colorpalette3').colorPalette()
+  .on('selectColor', function(e) {
+    $('#selected-color2 i').css('background-color', e.color);
+  });</pre>
     </section>
     <hr>
     <section>
@@ -99,14 +134,33 @@
                   $('#selected-color3').val(e.color);
                 });
       </script>
+      
+      <pre class="prettyprint linenums">
+&lt;input id="selected-color3"&gt;
+&lt;div id="colorpalette4"&gt;&lt;/div&gt;</pre>
+      <pre class="prettyprint linenums">
+var options = {
+  colors:[['#000000', '#424242', '#636363', '#9C9C94', '#CEC6CE', '#EFEFEF', '#EFF7F7', '#FFFFFF']]
+}
+$('#colorpalette4').colorPalette(options)
+  .on('selectColor', function(e) {
+    $('#selected-color3').val(e.color);
+  });</pre>
     </section>
 
     <footer>
 
     </footer>
 
-
-  </div>
 </div>
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script src="assets/js/application.js"></script>
+<script>
+  if (navigator.appVersion.indexOf('Mac') > -1 ){
+    document.body.className += 'mac';
+  } else {
+    document.body.className += 'win';
+  }
+</script>
 </body>
 </html>
