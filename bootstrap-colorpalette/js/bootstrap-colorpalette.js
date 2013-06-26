@@ -46,8 +46,7 @@
       palette.element.trigger({
         type: 'selectColor',
         color: value,
-        element: palette.element,
-        target:palette.target
+        element: palette.element
       });
     });
   };
@@ -60,10 +59,13 @@
 
   $.fn.extend({
     colorPalette : function(options) {
-      var data = this.data('colorpalette');
-      if (!data) {
-        this.data('colorpalette', data = new Palette(this, options));
-      }
+      this.each(function () {
+        var $this = $(this),
+            data = $this.data('colorpalette');
+        if (!data) {
+          $this.data('colorpalette', new Palette($this, options));
+        }
+      });
       return this;
     }
   });
