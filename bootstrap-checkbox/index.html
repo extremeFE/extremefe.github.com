@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" media="all" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
+  <link href="../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-checkbox.css" />
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/bootstrap-checkbox.js" charset="utf-8"></script>
+  <title>Color Palette for Bootstrap by extremeFE</title>
+</head>
+
+<body>
+<div class="container">
+    <header>
+      <h1>Three state checkbox for Bootstrap</h1>
+    </header>
+
+    <section id="downloads" class="clearfix">
+      <a href="https://github.com/extremeFE/bootstrap-checkbox" id="view-on-github" class="button"><span>View on GitHub</span></a>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>
+        Basic checkbox
+      </h2>
+      <input id="checkbox1" type="checkbox" value="1">
+      <script>
+        $('#checkbox1').checkbox();
+      </script>
+
+      <pre class="prettyprint linenums">
+&lt;input id="checkbox1" type="checkbox" value="1"&gt;</pre>
+      <pre class="prettyprint linenums">
+$('#checkbox1').checkbox();</pre>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>
+        Three state checkbox
+      </h2>
+      <input id="checkbox2" type="checkbox" value="1">
+      <script>
+        $('#checkbox2').checkbox().chbxChecked(null);
+      </script>
+      <pre class="prettyprint linenums">
+&lt;input id="checkbox2" type="checkbox" value="1"&gt;</pre>
+      <pre class="prettyprint linenums">
+$('#checkbox2').checkbox().chbxChecked(null);</pre>
+    </section>
+    <hr>
+    <section>
+      <h2>
+        check event
+      </h2>
+      <input id="checkvalue3" type="text" /><br/>
+      <input id="checkbox3-1" class="checkbox3" type="checkbox" value="Apple"> Apple<br/>
+      <input id="checkbox3-2" class="checkbox3" type="checkbox" value="Orange"> Orange<br/>
+      <input id="checkbox3-3" class="checkbox3" type="checkbox" value="Google"> Google
+      <script>
+        $('.checkbox3').checkbox().on('check', function(e) {
+          var value = $('#checkvalue3').val();
+          if (e.checked) {
+            value = $.trim(value + ' ' + e.value);
+          } else {
+            value = $.trim(value.replace(e.value, '').replace('  ', ' '));
+          }
+          $('#checkvalue3').val(value);
+        });
+      </script>
+
+      <pre class="prettyprint linenums">
+&lt;input id="checkvalue3" type="text" /&gt;&lt;br/&gt;
+&lt;input id="checkbox3-1" class="checkbox3" type="checkbox" value="Apple"&gt; Apple&lt;br/&gt;
+&lt;input id="checkbox3-2" class="checkbox3" type="checkbox" value="Orange"&gt; Orange&lt;br/&gt;
+&lt;input id="checkbox3-3" class="checkbox3" type="checkbox" value="Google"&gt; Google</pre>
+      <pre class="prettyprint linenums">
+$('.checkbox3').checkbox().on('check', function(e) {
+  var value = $('#checkvalue3').val();
+  if (e.checked) {
+    value = $.trim(value + ' ' + e.value);
+  } else {
+    value = $.trim(value.replace(e.value, '').replace('  ', ' '));
+  }
+  $('#checkvalue3').val(value);
+});</pre>
+    </section>
+
+    <section>
+      <h2>
+        Change checkbox value
+      </h2>
+      <input id="checkbox4" type="checkbox" value="Bootstrap is" checked/> Bootstrap<br/>
+      before : <span id="checkvalue4-1"></span><br/>
+      after : <span id="checkvalue4-2"></span>
+      <script>
+        var welCheckbox4 = $('#checkbox4').checkbox();
+        $('#checkvalue4-1').html(welCheckbox4.chbxVal());
+        welCheckbox4.chbxVal('dependent on jQuery')
+        $('#checkvalue4-2').html(welCheckbox4.chbxVal());
+      </script>
+
+        <pre class="prettyprint linenums">
+&lt;input id="checkbox4" type="checkbox" value="Bootstrap is" checked/&gt; bootstrap&lt;br/&gt;
+before : &lt;span id="checkvalue4-1"&gt;&lt;/span&gt;&lt;br/&gt;
+after : &lt;span id="checkvalue4-2"&gt;&lt;/span&gt;</pre>
+        <pre class="prettyprint linenums">
+var welCheckbox4 = $('#checkbox4').checkbox();
+$('#checkvalue4-1').html(welCheckbox4.chbxVal());
+welCheckbox4.chbxVal('dependent on jQuery')
+$('#checkvalue4-2').html(welCheckbox4.chbxVal());</pre>
+    </section>
+
+    <section>
+      <h2>
+        Change checkbox check state
+      </h2>
+      <input id="checkbox5-1" type="checkbox" value="checked"/> : <span id="checkvalue5-1"></span><br/>
+      <input id="checkbox5-2" type="checkbox" value="unchecked"/> : <span id="checkvalue5-2"></span><br/>
+      <input id="checkbox5-3" type="checkbox" value="ambiguous"/> : <span id="checkvalue5-3"></span><br/>
+      <script>
+        var welCheckbox51 = $('#checkbox5-1').checkbox();
+        welCheckbox51.chbxChecked(true);
+        if (welCheckbox51.chbxChecked() === true) {
+          $('#checkvalue5-1').html(welCheckbox51.chbxVal());
+        }
+
+        var welCheckbox52 = $('#checkbox5-2').checkbox();
+        welCheckbox52.chbxChecked(false);
+        if (welCheckbox52.chbxChecked() === false) {
+          $('#checkvalue5-2').html(welCheckbox52.chbxVal());
+        }
+
+        var welCheckbox53 = $('#checkbox5-3').checkbox();
+        welCheckbox53.chbxChecked(null);
+        if (welCheckbox53.chbxChecked() === null) {
+          $('#checkvalue5-3').html(welCheckbox53.chbxVal());
+        }
+      </script>
+
+          <pre class="prettyprint linenums">
+&lt;input id="checkbox5-1" type="checkbox" value="checked"/&gt; : &lt;span id="checkvalue5-1"&gt;&lt;/span&gt;&lt;br/&gt;
+&lt;input id="checkbox5-2" type="checkbox" value="unchecked"/&gt; : &lt;span id="checkvalue5-2"&gt;&lt;/span&gt;&lt;br/&gt;
+&lt;input id="checkbox5-3" type="checkbox" value="ambiguous"/&gt; : &lt;span id="checkvalue5-3"&gt;&lt;/span&gt;&lt;br/&gt;</pre>
+          <pre class="prettyprint linenums">
+var welCheckbox51 = $('#checkbox5-1').checkbox();
+welCheckbox51.chbxChecked(true);
+if (welCheckbox51.chbxChecked() === true) {
+  $('#checkvalue5-1').html(welCheckbox51.chbxVal());
+}
+
+var welCheckbox52 = $('#checkbox5-2').checkbox();
+welCheckbox52.chbxChecked(false);
+if (welCheckbox52.chbxChecked() === false) {
+  $('#checkvalue5-2').html(welCheckbox52.chbxVal());
+}
+
+var welCheckbox53 = $('#checkbox5-3').checkbox();
+welCheckbox53.chbxChecked(null);
+if (welCheckbox53.chbxChecked() === null) {
+  $('#checkvalue5-3').html(welCheckbox53.chbxVal());
+}</pre>
+    </section>
+    <footer>
+
+    </footer>
+
+</div>
+<script src="../assets/js/google-code-prettify/prettify.js"></script>
+<script src="../assets/js/application.js"></script>
+<script>
+  if (navigator.appVersion.indexOf('Mac') > -1 ){
+    document.body.className += 'mac';
+  } else {
+    document.body.className += 'win';
+  }
+</script>
+</body>
+</html>
