@@ -1,10 +1,13 @@
 .bootstrap-checkbox {
-    margin:1px;
     display:inline-block;
     position:relative;
     width:13px;
     height:13px;
     border:1px solid #000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .bootstrap-checkbox i{
