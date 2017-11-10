@@ -1,0 +1,69 @@
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#y-axis {
+  width: 80px;
+  height: calc(100vh - 90px);
+  position: absolute;
+  left: 0;
+  top: 30px;
+  border-right: 1px solid #555;
+  box-sizing: border-box;
+}
+
+.y-tick {
+  width: 100%;
+  font-size: 12px;
+  text-align: right;
+  position: absolute;
+  right: 5px;
+}
+
+#x-axis {
+  width: calc(100vw - 109px);
+  height: 60px;
+  position: absolute;
+  left: 79px;
+  bottom: 0;
+  border-top: 1px solid #555;
+  box-sizing: border-box;
+}
+
+.x-tick {
+  width: 50px;
+  font-size:12px;
+  text-align: center;
+  position: absolute;
+  top: 7px;
+  margin-left: -25px;
+}
+
+.tick-bar {
+  width: 1px;
+  height: 5px;
+  background-color: #555;
+  position: absolute;
+  top: -7px;
+  left: 50%;
+}
+
+#series {
+  width: calc(100vw - 110px);
+  height: calc(100vh - 120px);
+  position: absolute;
+  right: 30px;
+  top: 47px;
+}
+
+#counting-area {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  color: #555;
+  font-size: 12px;
+  font-family: Verdana;
+}
