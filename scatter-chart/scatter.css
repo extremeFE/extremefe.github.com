@@ -67,17 +67,3 @@ body {
   font-size: 12px;
   font-family: Verdana;
 }
-
-#loading-layer {
-  width: 100vw;
-  height: 100vh;
-  font-size: 24px;
-  font-family: verdana;
-  text-align: center;
-  line-height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-#loading-layer.hide {
-  display: none;
-}
