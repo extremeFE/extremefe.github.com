@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #4366B0;
+  overflow: hidden;
+}
+
+#container * {
+  box-sizing: border-box;
+}
+
+.toss-title {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+}
+
+.remittance-field {
+  width: 100vw;
+  height: 71px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sub-title {
+  height: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  padding: 0 23px;
+}
+
+.remittance-field > input {
+  position: absolute;
+  top: -100px;
+}
+
+.remittance-message {
+  width: 100vw;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 23px;
+  font-size: 11px;
+  color: #fff;
+}
+
+.remittance-message .warning {
+  color: #CFBC57;
+}
+
+.input-view {
+  width: calc(100vw - 50px);
+  height: 28px;
+  color: #fff;
+  font-size: 17px;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+  margin: 0 23px;
+}
+
+.account-selector {
+  width: 100vw;
+  height: 108px;
+}
+
+.swiper-container {
+  width:100vw;
+  height: 90px;
+  position: relative;
+}
+
+.swiper-slide {
+  height: 60px;
+  background-color: #5481EB;
+  opacity: 0.6;
+  padding: 15px;
+  color: #fff;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+}
+
+.bank-name {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.bank-balance {
+  font-size: 11px;
+  opacity: 0.8;
+}
+.swiper-pagination-bullet {
+  background-color: transparent;
+  border: 1px solid #51E1BF;
+  opacity: 1;
+  width: 6px;
+  height: 6px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #51E1BF;
+}
+
+.bottom-message-bar {
+  width: 100vw;
+  height: 20px;
+  position: fixed;
+  bottom: 62px;
+  left: 0;
+  display: flex;
+  visibility: hidden;
+}
+
+.bottom-message-bar.show {
+  visibility: visible;
+}
+
+.message {
+  height: 20px;
+  padding: 0 7px;
+  margin: 0 auto;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+  background-color: #3E5A9E;
+  -webkit-justify-content: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+}
+
+.message > strong {
+  font-weight: normal;
+  color: #74EACF;
+}
+
+.show .message {
+  opacity: 1;
+  transition: opacity 0.3s, width 0.3s;
+}
+
+.send-button {
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 0 10px 10px;
+}
+
+.send-button > button {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 100%;
+  font-size: 15px;
+  color: #D5D5D5;
+  background-color: #E4E5E5;
+  outline: none;
+}
+
+.send-button.active > button {
+  color: #3354EC;
+  background-color: #fff;
+}
+
+.send-button.active > button:active {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
